@@ -23,11 +23,6 @@ public class BellyCukesSteps {
         this.waitingTime = waitingTime;
     }
 
-    @When("^I don't wait$")
-    public void I_don_t_wait() throws Throwable {
-        this.waitingTime = 0;
-    }
-
     @Then("^My belly should (?:be )?\"([^\"]*)\"$")
     public void my_belly_should(String expectedSound) throws Throwable {
         String actualSound = belly.getSound(waitingTime);
