@@ -1,8 +1,9 @@
 package mybelly.steps;
 
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.PendingException;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import mybelly.Belly;
 
 import static org.hamcrest.core.Is.is;
@@ -27,5 +28,11 @@ public class BellyCukesSteps {
     public void my_belly_should(String expectedSound) throws Throwable {
         String actualSound = belly.getSound(waitingTime);
         assertThat(actualSound, is(expectedSound));
+    }
+
+    @When("^I don't wait$")
+    public void I_don_t_wait() throws Throwable {
+        // Express the Regexp above with the code you wish you had
+        throw new PendingException();
     }
 }
